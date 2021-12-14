@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGame : MonoBehaviour
+namespace Entrust
 {
-    public GameObject EnemyObj;
-    // Start is called before the first frame update
-    void Start()
+    public class StartGame : MonoBehaviour
     {
-        transform.Find("BtnStart").GetComponent<Button>().onClick.AddListener(() =>
+        void Start()
         {
-            gameObject.SetActive(false);
-            EnemyObj.SetActive(true);
-        });
-    }
+            transform.Find("BtnStart").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                gameObject.SetActive(false);
+                GameStartEvent.Trigger();
+            });
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }
+

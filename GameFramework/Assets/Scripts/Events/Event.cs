@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Entrust
 {
-    public class GameStartEvent
+    public class Event<T> where T : Event<T>
     {
         private static Action mOnEvent;
         /// <summary>
@@ -29,6 +29,10 @@ namespace Entrust
         /// </summary>
         public static void Trigger()
         {
+            // if (mOnEvent != null)
+            // {
+            //     mOnEvent.Invoke();
+            // }
             mOnEvent?.Invoke();
         }
     }

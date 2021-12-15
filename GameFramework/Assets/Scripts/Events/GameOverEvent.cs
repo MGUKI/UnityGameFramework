@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Entrust
+namespace MyFramework
 {
     public class GameOverEvent : Event<GameOverEvent>
     {

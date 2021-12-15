@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Entrust
+namespace MyFramework
 {
     public class GameModel
     {
         public static int a;
+        public static int count;
     }
 }
 

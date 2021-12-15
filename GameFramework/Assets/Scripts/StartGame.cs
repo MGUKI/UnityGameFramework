@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Entrust
+namespace MyFramework
 {
     public class StartGame : MonoBehaviour
     {

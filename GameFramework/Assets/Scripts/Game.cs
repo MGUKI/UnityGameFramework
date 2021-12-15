@@ -10,25 +10,25 @@ namespace Entrust
         private void Awake()
         {
             GameStartEvent.Register(SetEnemyActive);
+            EnemyEvent.Register(SetOverUI);
+        }
+        private void SetOverUI()
+        {
+            GameModel.a++;
+            if (GameModel.a == 5)
+            {
+                //passUI.SetActive(true);
+                GameOverEvent.Trigger();
+            }
         }
         private void SetEnemyActive()
         {
             transform.Find("Enemy").gameObject.SetActive(true);
         }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
         private void OnDisable()
         {
             GameStartEvent.UnRegister(SetEnemyActive);
+            GameOverEvent.UnRegister(SetOverUI);
         }
     }
 }

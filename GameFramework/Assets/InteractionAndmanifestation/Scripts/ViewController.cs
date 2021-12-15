@@ -9,53 +9,37 @@ namespace MyFramework
         private Text number;
         void Start()
         {
-            OnCountChangedEvent.Register(OnCountChanged);
+            //订阅方法
+            CounterModel.count.OnValueChanged += OnCountChanged;
             
             number = transform.Find("Canvas/number").GetComponent<Text>();
+
+            OnCountChanged(CounterModel.count.Valve);
 
             transform.Find("Canvas/AddNumber").GetComponent<Button>().onClick.AddListener(() =>
             {
                 //交互逻辑
-                ViewModel.count++;
+                CounterModel.count.Valve++;
             });
             transform.Find("Canvas/SubNumber").GetComponent<Button>().onClick.AddListener(() =>
             {
                 //交互逻辑
-                ViewModel.count--;
+                CounterModel.count.Valve--;
             });
         }
-        private void OnCountChanged()
+        private void OnCountChanged(int count)
         {
-            number.text = ViewModel.count.ToString();
+            number.text = count.ToString();
         }
         private void OnDisable()
         {
-            OnCountChangedEvent.UnRegister(OnCountChanged);
+            //取消订阅
+            CounterModel.count.OnValueChanged -= OnCountChanged;
         }
     }
-    public class ViewModel
+    public class CounterModel
     {
-        private static int mCount;
-        public static Action<int> mOnEvent;
-        public static int count
-        {
-            get => mCount;
-            set
-            {
-                if (value != mCount)
-                {
-                    mCount = value;
-                    
-                    //mOnEvent?.Invoke(value);
-                    OnCountChangedEvent.Trigger();
-                }
-            }
-        }
-    }
-
-    public class OnCountChangedEvent : Event<OnCountChangedEvent>
-    {
-        
+        public static BindableProperty<int> count = new BindableProperty<int>() {Valve = 0};
     }
 }
 

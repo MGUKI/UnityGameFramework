@@ -9,35 +9,28 @@ namespace MyFramework
         private Text number;
         void Start()
         {
-            ViewModel.mOnEvent += OnCountChanged;
+            OnCountChangedEvent.Register(OnCountChanged);
             
             number = transform.Find("Canvas/number").GetComponent<Text>();
-            //UpdateView();
-            
+
             transform.Find("Canvas/AddNumber").GetComponent<Button>().onClick.AddListener(() =>
             {
                 //交互逻辑
                 ViewModel.count++;
-                //表现逻辑
-                //UpdateView();
             });
             transform.Find("Canvas/SubNumber").GetComponent<Button>().onClick.AddListener(() =>
             {
+                //交互逻辑
                 ViewModel.count--;
-                //UpdateView();
             });
         }
-        private void OnCountChanged(int newCount)
-        {
-            number.text = newCount.ToString();
-        }
-        void UpdateView()
+        private void OnCountChanged()
         {
             number.text = ViewModel.count.ToString();
         }
         private void OnDisable()
         {
-            ViewModel.mOnEvent -= OnCountChanged;
+            OnCountChangedEvent.UnRegister(OnCountChanged);
         }
     }
     public class ViewModel
@@ -53,10 +46,16 @@ namespace MyFramework
                 {
                     mCount = value;
                     
-                    mOnEvent?.Invoke(value);
+                    //mOnEvent?.Invoke(value);
+                    OnCountChangedEvent.Trigger();
                 }
             }
         }
+    }
+
+    public class OnCountChangedEvent : Event<OnCountChangedEvent>
+    {
+        
     }
 }
 

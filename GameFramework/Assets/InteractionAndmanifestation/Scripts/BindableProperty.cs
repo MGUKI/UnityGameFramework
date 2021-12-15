@@ -19,7 +19,7 @@ namespace MyFramework
                 if (!value.Equals(mValve))
                 {
                     mValve = value;
-                    OnValueChanged(value);
+                    OnValueChanged?.Invoke(value);
                 }
             }
         }

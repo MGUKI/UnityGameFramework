@@ -13,7 +13,8 @@ namespace MyFramework
         private void OnMouseDown()
         {
             Destroy(gameObject);
-            EnemyEvent.Trigger();
+            //EnemyEvent.Trigger();
+            GameModel.count.Valve++;
         }
     }
 }

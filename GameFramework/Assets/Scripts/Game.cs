@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MyFramework
@@ -10,14 +7,12 @@ namespace MyFramework
         private void Awake()
         {
             GameStartEvent.Register(SetEnemyActive);
-            EnemyEvent.Register(SetOverUI);
+            GameModel.count.OnValueChanged += SetOverUI;
         }
-        private void SetOverUI()
+        private void SetOverUI(int CountValve)
         {
-            GameModel.count++;
-            if (GameModel.count == 5)
+            if (CountValve == 5)
             {
-                //passUI.SetActive(true);
                 GameOverEvent.Trigger();
             }
         }
@@ -27,6 +22,7 @@ namespace MyFramework
         }
         private void OnDisable()
         {
+            GameModel.count.OnValueChanged -= SetOverUI;
             GameStartEvent.UnRegister(SetEnemyActive);
         }
     }

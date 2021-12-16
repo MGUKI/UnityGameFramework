@@ -6,7 +6,7 @@ namespace MyFramework
 {
     public class GameModel
     {
-        public static int count;
+        public static BindableProperty<int> count = new BindableProperty<int>(){Valve = 0};
     }
 }
 

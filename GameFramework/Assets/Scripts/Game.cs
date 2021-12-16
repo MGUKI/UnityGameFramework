@@ -14,8 +14,8 @@ namespace MyFramework
         }
         private void SetOverUI()
         {
-            GameModel.a++;
-            if (GameModel.a == 5)
+            GameModel.count++;
+            if (GameModel.count == 5)
             {
                 //passUI.SetActive(true);
                 GameOverEvent.Trigger();
@@ -28,7 +28,6 @@ namespace MyFramework
         private void OnDisable()
         {
             GameStartEvent.UnRegister(SetEnemyActive);
-            GameOverEvent.UnRegister(SetOverUI);
         }
     }
 }

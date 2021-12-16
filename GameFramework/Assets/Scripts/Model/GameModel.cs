@@ -6,7 +6,6 @@ namespace MyFramework
 {
     public class GameModel
     {
-        public static int a;
         public static int count;
     }
 }

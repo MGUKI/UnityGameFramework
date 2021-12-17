@@ -9,6 +9,8 @@ namespace MyFramework
     //扩展类为静态类
     public static class MainExtend
     {
+        #region 通用
+
         //this需要扩展的类型，这里object是所有类型
         public static void LogType(this object obj)
         {
@@ -35,6 +37,9 @@ namespace MyFramework
             //这里需要使用obj.GetType()获取属性
             return type.GetCustomAttribute<T>();
         }
+
+        #endregion
+
     }
 }
 

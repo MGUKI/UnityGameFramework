@@ -64,6 +64,8 @@
      <Compile Include="Assets\InteractionAndmanifestation\Scripts\ViewController.cs" />
      <Compile Include="Assets\InteractionAndmanifestation\Scripts\BindableProperty.cs" />
      <Compile Include="Assets\Scripts\MgExtend\MainExtend.cs" />
+     <Compile Include="Assets\Scripts\Attribute\TestAttribute.cs" />
+     <Compile Include="Assets\Scripts\TestAttributeClass.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Singleton : MonoBehaviour
+/// <summary>
+/// 单例模式基类
+/// </summary>
+public class Singleton<T> where T:new()
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static T instance;
 
-    // Update is called once per frame
-    void Update()
+    public static T Instance
     {
-        
+        get
+        {
+            if (instance == null)
+            {
+                instance = new T();
+            }
+
+            return instance;
+        }
     }
 }

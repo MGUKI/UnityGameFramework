@@ -5,10 +5,11 @@ public class SingletonTest : MonoBehaviour
 {
     void Start()
     {
-        Debug.Log(TestSingleton.Instance.txt);
+        Debug.Log(TestSingleton.Instance.testTxt);
+        Debug.Log(GameRoot.Instance.testTxt);
     }
 }
 public class TestSingleton : Singleton<TestSingleton>
 {
-    public String txt = "555";
+    public String testTxt = "TestSingleton";
 }

@@ -71,6 +71,7 @@
      <Compile Include="Assets\JK\Scripts\1.Base\GameRoot.cs" />
      <Compile Include="Assets\JK\Scripts\1.Base\1.Singleton\Singleton.cs" />
      <Compile Include="Assets\JK\Scripts\1.Base\1.Singleton\SingletonTest.cs" />
+     <Compile Include="Assets\JK\Scripts\1.Base\1.Singleton\SingletonMono.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

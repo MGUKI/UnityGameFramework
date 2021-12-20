@@ -6,6 +6,9 @@ using UnityEngine;
 public class GameRoot : SingletonMono<GameRoot>
 {
     public String testTxt = "GameRoot";
+    
+    [SerializeField]
+    private GameObject PoolRoot;
 
     protected override void Awake()
     {

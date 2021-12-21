@@ -27,7 +27,7 @@ public class GameRoot : SingletonMono<GameRoot>
     /// </summary>
     private void InitManger()
     {
-        MangerBase[] mangerBases = GetComponents<MangerBase>();
+        ManagerBase[] mangerBases = GetComponents<ManagerBase>();
         for (int i = 0; i < mangerBases.Length; i++)
         {
             mangerBases[i].Init();

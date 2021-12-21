@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolManager : MangerBase<PoolManager>
+public class PoolManager : ManagerBase<PoolManager>
 {
     public override void Init()
     {

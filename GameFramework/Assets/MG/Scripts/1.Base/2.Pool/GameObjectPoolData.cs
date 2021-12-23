@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MyFramework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameObjectPoolData
 {
@@ -41,6 +42,12 @@ public class GameObjectPoolData
     public GameObject GetObj()
     {
         GameObject obj = poolQueue.Dequeue();
-        return null;
+        //显示对象
+        obj.SetActive(true);
+        //父物体置空
+        obj.transform.parent = null;
+        //回归默认场景
+        SceneManager.MoveGameObjectToScene(obj,SceneManager.GetActiveScene());
+        return obj;
     }
 }

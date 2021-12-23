@@ -53,6 +53,29 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\MG\Editor\FileNote.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceGPU.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceUtil.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceMath.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferencePipline.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceSemantics.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceBuildInVariables.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceProperties.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceLighting.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceErrorDebug.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferencePlatformDifferences.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceBuildInTransformation.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceRenderState.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceOther.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceTransformation.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferencePragma.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceTags.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceAbout.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceGLSL.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceSearch.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceMiscellaneous.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceSetup.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferenceEditorWindow.cs" />
+     <Compile Include="Assets\taecgLibrary\ShaderReference\Editor\ShaderReferencePredefinedMacros.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

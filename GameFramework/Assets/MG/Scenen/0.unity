@@ -306,10 +306,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 660218814624053641, guid: 508bc5f6067722146b126b82dcab5d3e, type: 3}
-      propertyPath: PoolRoot
-      value: 
-      objectReference: {fileID: 975962918}
     - target: {fileID: 2624763186510109993, guid: 508bc5f6067722146b126b82dcab5d3e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -360,11 +356,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 508bc5f6067722146b126b82dcab5d3e, type: 3}
---- !u!1 &975962918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2250330383522185892, guid: 508bc5f6067722146b126b82dcab5d3e, type: 3}
-  m_PrefabInstance: {fileID: 975962917}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047518491
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,30 +52,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\MG\Scripts\1.Base\0.Extension\MainExtend.cs" />
-     <Compile Include="Assets\MG\Scripts\MyTest\ScriptableObject\GameConfig.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\2.Pool\ManagerBase.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\0.Extension\MainExtend.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\MyTest\ScriptableObject\GameConfig.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\2.Pool\ManagerBase.cs" />
      <Compile Include="Assets\LX\Scripts\Enemy.cs" />
-     <Compile Include="Assets\MG\Scripts\MyTest\TestClass\TestAttributeClass.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\MyTest\TestClass\TestAttributeClass.cs" />
      <Compile Include="Assets\LX\Scripts\Game.cs" />
      <Compile Include="Assets\LX\Scripts\UIEvent.cs" />
-     <Compile Include="Assets\MG\Scripts\MyTest\TestClass\TestScriptableObjectClass.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\MyTest\TestClass\TestScriptableObjectClass.cs" />
      <Compile Include="Assets\LX\Scripts\Events\GameOverEvent.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\1.Singleton\SingletonTest.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\2.Pool\GameObjectPoolData.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\1.Singleton\Singleton.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\1.Singleton\SingletonTest.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\2.Pool\GameObjectPoolData.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\1.Singleton\Singleton.cs" />
      <Compile Include="Assets\LX\Scripts\Model\GameModel.cs" />
      <Compile Include="Assets\LX\InteractionAndmanifestation\Scripts\BindableProperty.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\2.Pool\PoolManager.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\2.Pool\PoolManager.cs" />
      <Compile Include="Assets\LX\Scripts\StartGame.cs" />
-     <Compile Include="Assets\MG\Scripts\MyTest\Attribute\TestAttribute.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\1.Singleton\SingletonMono.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\MyTest\Attribute\TestAttribute.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\1.Singleton\SingletonMono.cs" />
      <Compile Include="Assets\LX\Scripts\Events\GameStartEvent.cs" />
-     <Compile Include="Assets\MG\Scripts\1.Base\GameRoot.cs" />
+     <Compile Include="Assets\MGFramework\Scripts\1.Base\GameRoot.cs" />
      <Compile Include="Assets\LX\Scripts\Events\EnemyEvent.cs" />
      <Compile Include="Assets\LX\InteractionAndmanifestation\Scripts\ViewController.cs" />
      <Compile Include="Assets\LX\Scripts\Events\Event.cs" />
-     <None Include="Assets\test.shader" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

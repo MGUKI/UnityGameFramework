@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameObjectPoolData
 {
-    //对象池 父节点
+    //对象池 父节点 (pooRootObj下)
     public GameObject fatherObj;
     //对象容器
     public Queue<GameObject> poolQueue;

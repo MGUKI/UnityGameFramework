@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferencePragma.cs" />
+     <Compile Include="Assets\ShaderTest\Editor\CustomShaderGUI.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceOther.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceErrorDebug.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceRenderState.cs" />
@@ -76,7 +77,6 @@
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceTransformation.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceUtil.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceProperties.cs" />
-     <Compile Include="Assets\ShaderTest\Editor\CustomShaderGUI.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -75,6 +75,8 @@
      <Compile Include="Assets\LX\Scripts\Events\EnemyEvent.cs" />
      <Compile Include="Assets\LX\InteractionAndmanifestation\Scripts\ViewController.cs" />
      <Compile Include="Assets\LX\Scripts\Events\Event.cs" />
+     <Compile Include="Assets\MGFramework\Test\Test.cs" />
+     <Compile Include="Assets\MGFramework\Test\TestPoolCube.cs" />
      <None Include="Assets\ShaderTest\shaders\SFXCore.hlsl" />
      <None Include="Assets\ShaderTest\shaders\UVvertex.shader" />
  <Reference Include="UnityEngine">

@@ -55,7 +55,15 @@ public class PoolManager : ManagerBase<PoolManager>
     /// <param name="obj"></param>
     public void PushGameObject(GameObject obj)
     {
-        
+        string name = obj.name;
+        if (gameObjPoolDie.ContainsKey(name))
+        {
+            gameObjPoolDie[name].PushObj(obj);
+        }
+        else
+        {
+            gameObjPoolDie.Add(name,new GameObjectPoolData(obj,poolRotObj));
+        }
     }
     /// <summary>
     /// 检查有没有某一层对象池数据

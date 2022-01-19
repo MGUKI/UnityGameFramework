@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: URP_SFX_UVEffect_Vertex
-  m_Shader: {fileID: 4800000, guid: 0ae92bee9a3e8bd4d8db3c46b9305237, type: 3}
+  m_Name: URP_SFX_UVEffect_Vertex2
+  m_Shader: {fileID: 4800000, guid: 07b52568f5866854e854d583b7ddf32e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,11 +20,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _DissolveTex:
-        m_Texture: {fileID: 2800000, guid: 96ab3e8623179944083c4d5d00acabc1, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 08a00299070e2c345b3a1656b1965dfe, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _VertexOffsetTex:
@@ -40,16 +40,14 @@ Material:
     - _DepthMode: 0
     - _DissolvePannerX: 0
     - _DissolvePannerY: 0
-    - _DissolveStr: 0
     - _FadeLength: 0.5
     - _MainPannerX: 0
     - _MainPannerY: 0
     - _SmoothClipInt: 0
     - _SoftDissolveIndensity: 0
     - _SoftDissolveSwitch: 0
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _TESTMODE: 0
-    - _TestMode: 1
     - _UseDepthFade: 0
     - _VertexOffsetStr: 1
     - _VertexPannerX: 0.5

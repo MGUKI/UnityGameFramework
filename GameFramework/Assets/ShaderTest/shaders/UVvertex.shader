@@ -2,13 +2,15 @@ Shader"URP/SFX/UVEffect_Vertex2"
 {
     Properties
     {
-//        [Toggle]_ShaderMode("Shader Mode", Float) = 1
         [Header(Mode)]
         [Enum(UnityEngine.Rendering.BlendMode)]_SrcBlend("Src Mode", Float) = 1
-        [Enum(UnityEngine.Rendering.BlendMode)]_BlendMode("Blend Mode", Float) = 10
+        [Enum(UnityEngine.Rendering.BlendMode)]_DstBlend("Blend Mode", Float) = 10
 		[Enum(UnityEngine.Rendering.CullMode)]_CullMode("Cull Mode", Float) = 0
 		[Enum(UnityEngine.Rendering.CompareFunction)]_ZTest("ZTest", Float) = 4
-        [Enum(On,1,Off,0)]_DepthMode("Depth Mode", Float) = 0
+        [Enum(On,1,Off,0)]_ZWrite("Depth Mode", Float) = 0
+        [Toggle(_CLIPPING_ON)]_Clipping("Clipping" , int) = 0
+        _ClippingInt("ClippingInt" , int) = 0.5
+        [Toggle(_SOFTDISSOLVESWITCH_ON)]_SoftDissolveSwitch("软硬溶解" , int) = 0
         [Header(Main)]
         [HDR]_MainColor("Main Color", Color) = (1, 1, 1, 1)
         _MainTex ("Main Tex", 2D) = "white" {}
@@ -18,17 +20,14 @@ Shader"URP/SFX/UVEffect_Vertex2"
         _VertexOffsetTex("VertexOffset Tex", 2D) = "black"{}
         _VertexPannerX("VertexOffsetX", Range(0,1)) = 0.5
         _VertexPannerY("VertexOffsetY", Range(0,1)) = 0.5
-        _VertexOffsetStr("VertexOffsetStr", Range(0,1)) = 1
+        _VertexOffsetStr("VertexOffsetStr", Range(0,10)) = 1
         [Header(Dissolve)]
-
-        [Toggle(_TESTMODE_ON)]_TESTMODE("ATest" , int) = 0
-
-        [Toggle(_SOFTDISSOLVESWITCH_ON)]_SoftDissolveSwitch("溶解开关" , int) = 0
         _DissolveTex("Dissolve Tex", 2D) = "white"{}
         _DissolvePannerX("MainPannerX", Float) = 0
         _DissolvePannerY("MainPannerY", Float) = 0
         _SoftDissolveIndensity ("ClipInt" , Range(0,1.05)) = 0
         _SmoothClipInt ("SmoothClipInt" ,float) = 0
+        
         [Header(Fade)]
         [Toggle]_UseDepthFade("Use Depth Fade", Float) = 0
         _FadeLength("Fade Length", Range(0, 10)) = 0.5
@@ -46,8 +45,8 @@ Shader"URP/SFX/UVEffect_Vertex2"
             "LightMode"="UniversalForward"
         }
         LOD 100
-        Blend [_SrcBlend] [_BlendMode]
-        ZWrite [_DepthMode]
+        Blend [_SrcBlend] [_DstBlend]
+        ZWrite [_ZWrite]
         Cull [_CullMode]
         ZTest [_ZTest]
         Offset 0 , 0
@@ -61,7 +60,7 @@ Shader"URP/SFX/UVEffect_Vertex2"
             #pragma shader_feature_local _ _USEDEPTHFADE_ON
             #pragma shader_feature_local _ _CAMERAFADE_ON
             #pragma shader_feature _SOFTDISSOLVESWITCH_ON
-#pragma shader_feature _TESTMODE_ON
+            #pragma shader_feature _CLIPPING_ON
 
 			#pragma multi_compile _FX_LEVEL_HIGH _FX_LEVEL_MEDIUM _FX_LEVEL_LOW
             #pragma multi_compile_instancing
@@ -71,6 +70,7 @@ Shader"URP/SFX/UVEffect_Vertex2"
             #pragma fragment frag
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/core.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
+            #include "SFXCore.hlsl"
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -114,7 +114,7 @@ Shader"URP/SFX/UVEffect_Vertex2"
             float _MainPannerX;
             float _MainPannerY;
             float _DissolvePannerX;
-            float _DissolvePannerY,_VertexOffsetStr,_SoftDissolveIndensity,_SmoothClipInt;
+            float _DissolvePannerY,_VertexOffsetStr,_SoftDissolveIndensity,_SmoothClipInt,_ClippingInt;
         #ifdef _DEPTHMODE_ON
             half _CUTOUT;
         #endif
@@ -157,7 +157,7 @@ Shader"URP/SFX/UVEffect_Vertex2"
                 //half2 mainUV = i.uv * _MainTex_ST.xy + _MainTex_ST.zw;
                 float2 panner = float2(_MainPannerX * _TimeParameters.x, _MainPannerY * _TimeParameters.x);
                 half2 mainUV = i.uv * _MainTex_ST.xy  +_MainTex_ST.zw + frac(panner);
-                half2 dissUV = i.uv * _DissolveTex_ST.xy + _DissolveTex_ST.zw + frac(float2(_DissolvePannerX * _TimeParameters.x, _DissolvePannerX * _TimeParameters.x));
+                half2 dissUV = i.uv * _DissolveTex_ST.xy + _DissolveTex_ST.zw + frac(float2(_DissolvePannerX * _TimeParameters.x, _DissolvePannerY * _TimeParameters.x));
                 half4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, mainUV) * _MainColor * i.color;
                 #ifdef _SOFTDISSOLVESWITCH_ON
                 half dissolveTex =  Luminance(SAMPLE_TEXTURE2D(_DissolveTex,  sampler_DissolveTex, dissUV).rgb);
@@ -166,10 +166,10 @@ Shader"URP/SFX/UVEffect_Vertex2"
                 dissolveTex = clamp(dissolveTex,0,1);
                 dissolveTex = smoothstep(_SmoothClipInt,1-_SmoothClipInt,dissolveTex);//hard Clip
                 color.a *= dissolveTex;
+                
                 #endif
-             #ifdef _TESTMODE_ON
-                 clip(color.a - 0.5);
-                 color.a = max(color.a,0);
+             #ifdef _CLIPPING_ON
+                 clip(color.a - _ClippingInt);
             #endif
 
         #ifdef _FX_LEVEL_HIGH
@@ -189,4 +189,5 @@ Shader"URP/SFX/UVEffect_Vertex2"
         }
 
     }
+    CustomEditor "CustomShaderGUI"
 }

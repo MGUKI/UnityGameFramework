@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{d3e4a03b-8261-0a23-d46d-44ebbaf70f90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer", "Sirenix.OdinInspector.CompatibilityLayer.csproj", "{e53e6514-9b2d-5932-8124-ca2ad41fe2df}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{95f05100-6269-e55b-b2d7-2e5d28945b90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer.Editor", "Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj", "{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityMathematics", "Sirenix.OdinInspector.Modules.UnityMathematics.csproj", "{875b6c90-9976-26fd-15ab-b032ea0e16a8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +21,22 @@ Global
 		{d3e4a03b-8261-0a23-d46d-44ebbaf70f90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d3e4a03b-8261-0a23-d46d-44ebbaf70f90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{d3e4a03b-8261-0a23-d46d-44ebbaf70f90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{e53e6514-9b2d-5932-8124-ca2ad41fe2df}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e53e6514-9b2d-5932-8124-ca2ad41fe2df}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e53e6514-9b2d-5932-8124-ca2ad41fe2df}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{e53e6514-9b2d-5932-8124-ca2ad41fe2df}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95f05100-6269-e55b-b2d7-2e5d28945b90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95f05100-6269-e55b-b2d7-2e5d28945b90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95f05100-6269-e55b-b2d7-2e5d28945b90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95f05100-6269-e55b-b2d7-2e5d28945b90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875b6c90-9976-26fd-15ab-b032ea0e16a8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875b6c90-9976-26fd-15ab-b032ea0e16a8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875b6c90-9976-26fd-15ab-b032ea0e16a8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875b6c90-9976-26fd-15ab-b032ea0e16a8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

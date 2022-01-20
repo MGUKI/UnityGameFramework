@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class CustomShaderGUI : ShaderGUI 
+public class SFXTemplateShaderGUI : ShaderGUI 
 {
     MaterialEditor editor;
     Object[] materials;

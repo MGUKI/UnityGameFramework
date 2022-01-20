@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using MyFramework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// GameObject对象池数据
+/// </summary>
 public class GameObjectPoolData
 {
     //对象池 父节点 (pooRootObj下)
@@ -36,18 +38,23 @@ public class GameObjectPoolData
         obj.SetActive(false);
     }
     /// <summary>
-    /// 拿出去
+    /// 从对象池中获取对象
     /// </summary>
     /// <returns></returns>
-    public GameObject GetObj()
+    public GameObject GetObj(Transform parent = null)
     {
         GameObject obj = poolQueue.Dequeue();
         //显示对象
         obj.SetActive(true);
+        
         //父物体置空
-        obj.transform.parent = null;
-        //回归默认场景
-        SceneManager.MoveGameObjectToScene(obj,SceneManager.GetActiveScene());
+        //obj.transform.parent = null;
+        obj.transform.SetParent(parent);
+        if (parent == null)
+        {
+            //回归默认场景
+            SceneManager.MoveGameObjectToScene(obj,SceneManager.GetActiveScene());
+        }
         return obj;
     }
 }

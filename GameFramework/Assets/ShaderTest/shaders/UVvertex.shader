@@ -189,5 +189,5 @@ Shader"URP/SFX/UVEffect_Vertex2"
         }
 
     }
-    CustomEditor "CustomShaderGUI"
+    CustomEditor "SFXTemplateShaderGUI"
 }

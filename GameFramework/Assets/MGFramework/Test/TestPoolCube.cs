@@ -15,4 +15,9 @@ public class TestPoolCube : MonoBehaviour
     {
         PoolManager.Instance.PushGameObject(gameObject);
     }
+
+    public void cube()
+    {
+        Debug.Log("cube调用成功");
+    }
 }

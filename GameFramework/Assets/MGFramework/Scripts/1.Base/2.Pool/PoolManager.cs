@@ -126,21 +126,67 @@ public class PoolManager : ManagerBase<PoolManager>
         }
         else
         {
-            ObjectPoolDie.Add(name,new ObjectPoolData());
+            ObjectPoolDie.Add(name,new ObjectPoolData(obj));
         }
     }
 
     #endregion
 
-    /// <summary>
-    /// gameObjPoolDie置空
-    /// </summary>
-    public void Clear(bool clearObjectClss = true)
+
+
+    #region 清除方法
+
+    public void Clear(bool clearGameObjectClss = true,bool clearObjectClss = true)
     {
-        gameObjPoolDie.Clear();
+        if (clearGameObjectClss)
+        {
+            for (int i = 0; i < poolRotObj.transform.childCount; i++)
+            {
+                Destroy(poolRotObj.transform.GetChild(0).gameObject);
+            }
+            gameObjPoolDie.Clear();
+        }
+
         if (clearObjectClss)
         {
             ObjectPoolDie.Clear();
         }
     }
+
+    public void ClearGameObject()
+    {
+        Clear(true,false);
+    }
+
+    public void ClearGameObject(string prefabNmae)
+    {
+        Transform go = poolRotObj.transform.Find(prefabNmae);
+        if (go != null)
+        {
+            Destroy(go.gameObject);
+            gameObjPoolDie.Remove(prefabNmae);
+        }
+    }
+
+    public void ClearAllGameObject(GameObject prefab)
+    {
+        ClearGameObject(prefab.name);
+    }
+
+    public void ClearAllObject()
+    {
+        Clear(false,true);
+    }
+    public void ClearObject<T>()
+    {
+        ObjectPoolDie.Remove(typeof(T).FullName);
+    }
+
+    public void ClearObject(Type type)
+    {
+        ObjectPoolDie.Remove(type.FullName);
+    }
+
+    #endregion
+
 }

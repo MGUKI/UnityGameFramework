@@ -46,17 +46,17 @@ Material:
     - _FadeLength: 0.5
     - _MainPannerX: 0
     - _MainPannerY: 0
-    - _SmoothClipInt: 0.46
-    - _SoftDissolveIndensity: 0.303
+    - _SmoothClipInt: 0.43
+    - _SoftDissolveIndensity: 0.299
     - _SoftDissolveSwitch: 1
     - _SrcBlend: 5
     - _TESTMODE: 0
     - _UseDepthFade: 0
-    - _VertexOffsetStr: 4.4
-    - _VertexPannerX: 0.758
-    - _VertexPannerY: 0.5
+    - _VertexOffsetStr: 0
+    - _VertexPannerX: 0
+    - _VertexPannerY: 0
     - _ZTest: 4
     - _ZWrite: 0
     m_Colors:
-    - _MainColor: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
+    - _MainColor: {r: 9.082411, g: 9.082411, b: 9.082411, a: 1}
   m_BuildTextureStacks: []

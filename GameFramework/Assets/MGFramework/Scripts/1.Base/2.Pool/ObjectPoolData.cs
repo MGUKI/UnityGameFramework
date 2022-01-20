@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectPoolData
 {
-    public Queue<object> poolQueue;
+    public Queue<object> poolQueue = new Queue<object>();
     public void PushObj(object obj)
     {
         poolQueue.Enqueue(obj);

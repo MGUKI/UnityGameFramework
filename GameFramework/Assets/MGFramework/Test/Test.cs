@@ -1,24 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    public GameObject cube;
-    public GameObject sp;
-
+    private TestPool p;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            var testPoolCube = PoolManager.Instance.GetGameObject<TestPoolCube>(cube);
-            testPoolCube.cube();
+            p = PoolManager.Instance.GetObject<TestPool>();
+            p.Init();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            var testPoolSp = PoolManager.Instance.GetGameObject<TestPoolSp>(sp);
-            testPoolSp.sp();
+            p.Dead();
         }
     }
 }

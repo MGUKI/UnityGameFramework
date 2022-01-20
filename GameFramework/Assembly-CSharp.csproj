@@ -74,10 +74,9 @@
      <Compile Include="Assets\LX\Scripts\Events\GameStartEvent.cs" />
      <Compile Include="Assets\MGFramework\Scripts\1.Base\GameRoot.cs" />
      <Compile Include="Assets\LX\Scripts\Events\EnemyEvent.cs" />
-     <Compile Include="Assets\MGFramework\Test\TestPoolCube.cs" />
+     <Compile Include="Assets\MGFramework\Test\TestPool.cs" />
      <Compile Include="Assets\LX\InteractionAndmanifestation\Scripts\ViewController.cs" />
      <Compile Include="Assets\LX\Scripts\Events\Event.cs" />
-     <Compile Include="Assets\MGFramework\Test\TestPoolSp.cs" />
      <Compile Include="Assets\MGFramework\Scripts\1.Base\2.Pool\ObjectPoolData.cs" />
      <None Include="Assets\ShaderTest\shaders\SFXCore.hlsl" />
      <None Include="Assets\ShaderTest\shaders\UVvertex.shader" />

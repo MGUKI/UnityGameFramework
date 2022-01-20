@@ -90,6 +90,10 @@ public class PoolManager : ManagerBase<PoolManager>
     public T GetObject<T>() where T : class,new()
     {
         T obj;
+        foreach (var item in ObjectPoolDie.Values)
+        {
+            Debug.Log("获取-队列数量"+item.poolQueue.Count);
+        }
         if (CheckObjectCache<T>())
         {
             string name = typeof(T).FullName;
@@ -110,6 +114,10 @@ public class PoolManager : ManagerBase<PoolManager>
 
     public void PushObject(object obj)
     {
+        foreach (var item in ObjectPoolDie.Values)
+        {
+            Debug.Log("放进来-队列数量"+item.poolQueue.Count);
+        }
         string name = obj.GetType().FullName;
         // 
         if (ObjectPoolDie.ContainsKey(name))

@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 1420439156
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: ui.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: scenens.unity3d
+      Dependencies: {}

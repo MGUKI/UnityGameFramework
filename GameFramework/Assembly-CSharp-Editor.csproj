@@ -56,6 +56,7 @@
      <Compile Include="Assets\ShaderTest\Editor\SFXTemplateShaderGUI.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceOther.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceErrorDebug.cs" />
+     <Compile Include="Assets\AssetBundle\Editor\TestAssetBundle.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceRenderState.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceTags.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceEditorWindow.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceTransformation.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceUtil.cs" />
      <Compile Include="Assets\MGFramework\Tools\Lia\taecgLibrary\ShaderReference\Editor\ShaderReferenceProperties.cs" />
+     <Compile Include="Assets\MGFramework\Tools\SVC\Editor\ShaderVariantCollector.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -311,20 +313,11 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="Sirenix.Utilities.Editor">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Plastic.Antlr3.Runtime">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="log4netPlastic">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.NRefactory">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.render-pipelines.core@10.5.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
- </Reference>
- <Reference Include="unityplastic">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
@@ -332,17 +325,26 @@
  <Reference Include="Sirenix.OdinInspector.Attributes">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
+ <Reference Include="log4netPlastic">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ </Reference>
  <Reference Include="Sirenix.Serialization.Config">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.render-pipelines.core@10.5.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ </Reference>
  <Reference Include="Sirenix.Serialization">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
- <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ <Reference Include="unityplastic">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -707,17 +709,11 @@
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
- <Reference Include="Unity.ShaderGraph.Editor">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Shaders">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
- </Reference>
- <Reference Include="Unity.RenderPipelines.Universal.Editor">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Universal.Runtime">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
@@ -728,23 +724,11 @@
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
- <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Searcher.Editor">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
@@ -767,11 +751,29 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Unity.RenderPipelines.Core.Editor">
- <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Mathematics">
  <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ShaderGraph.Editor">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Editor">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>D:/GitHubXM/UnityGameFramework/UnityGameFramework_0/GameFramework/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -783,13 +785,13 @@
       <Project>{e53e6514-9b2d-5932-8124-ca2ad41fe2df}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
-      <Project>{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
       <Project>{875b6c90-9976-26fd-15ab-b032ea0e16a8}</Project>
       <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
+      <Project>{b6485c2f-68fd-1c49-04ff-ccfc319f43ef}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
